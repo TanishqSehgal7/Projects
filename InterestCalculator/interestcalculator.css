@@ -46,10 +46,7 @@ body {
 }
 
 .calcbtn:hover {
-    scale: 1.01;
-    border-color: rgb(0, 0, 0);
-    background: rgb(0, 255, 123);
-
+    font-weight: 900;
 }
 
 .cta {
