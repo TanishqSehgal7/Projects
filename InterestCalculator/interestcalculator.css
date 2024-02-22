@@ -49,6 +49,12 @@ body {
     scale: 1.01;
     border-color: rgb(0, 0, 0);
     background: rgb(0, 255, 123);
+
+}
+
+.cta {
+    display: flex;
+    flex-direction: column;
 }
 
 .submit {
