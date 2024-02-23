@@ -68,7 +68,12 @@ calculateInterestBtn.addEventListener('click', function(e){
                 showErrorMsgOnScreen()
         } else {
             // calculate CI here
-            const result = calculateCI()
+            const p = parseInt(principalInput.value)
+            const r = parseInt(interestRateInput.value)
+            const t = parseInt(durationInput.value)
+            const ct = String(compoundingTypeDropdown.value)
+            console.log(`Dropdownvalue: ${ct}`)
+            const result = calculateCI(p,r,t,ct)
             showResultOnScreen(result)
         }
 
@@ -114,7 +119,7 @@ function calculateSI(principal, rate, duration) {
 
 function calculateCI(principal, rate, duration, compoundingType) {
     let n = 1
-    
+    let result = 0;
     switch(compoundingType) {
         case "Annual":
             n = 1;
@@ -137,6 +142,8 @@ function calculateCI(principal, rate, duration, compoundingType) {
         default:
             n = 1;
     }
+    result = (Math.floor(principal * Math.pow((1 + (rate/(100*n))), (n*duration))) - principal)
+    return result
 }
 
 function showResultOnScreen(result) {
